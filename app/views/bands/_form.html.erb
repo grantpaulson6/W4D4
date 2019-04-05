@@ -1,0 +1,19 @@
+
+
+<form action="<%= method == :POST ? bands_url : band_url(band) %>" method="POST">
+    <input type="hidden" name="_method" value="<%= method %>">
+    
+    <%= auth_token %>
+
+    <label>Enter Band Name:
+        <input type="text" name="band[name]" value="<%= band.name %>">
+    </label>
+
+    <input type="submit" value="BOOM!">
+
+    <% if !flash.empty? %>
+        <% flash.keys.each do |k| %>
+            <%= flash[k] %>
+        <% end %>
+    <% end %>
+</form>
