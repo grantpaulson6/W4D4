@@ -1,20 +1,16 @@
 
 
 <h2>All Bands</h2>
-<ul>
+
 <%  @bands.each do |band| %>
-    <li>
-        <a href="<%= band_url(band) %>">
-            <p><%= band.name %></p>
-        </a>
-    </li>
-
+    <a href="<%= band_url(band) %>" class="info"><%= band.name %></a>
 <% end %>
-</ul>
 
 
+<h3>Options</h3>
+<div class="bucket">
 <form action="<%= new_band_url %>" method="GET">
     <%= auth_token %>
     <input type="submit" value="New Band"  class="button">
 </form>
-
+</div>
